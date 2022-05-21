@@ -15,8 +15,8 @@ namespace Account_Creator_Tool
     public partial class accountCreator : Form
     {
 
-        string StringConn = string.Empty;
-        string StringConn2 = string.Empty;
+        string stringConn = string.Empty;
+        string stringConn2 = string.Empty;
         SqlConnection conn = null;
         SqlConnection conn2 = null;
         SqlCommand mySqlCommand = null;
@@ -37,6 +37,23 @@ namespace Account_Creator_Tool
             txtIPDB.ForeColor = Color.Gray;
         }
 
+        private static bool isServerConnected(string connectionString)
+        {
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    return true;
+                }
+                catch (Exception)
+                {
+
+                    return false;
+                }
+            }
+        }
+
         
         private void btnConnect_Click(object sender, EventArgs e)
         {
@@ -50,19 +67,23 @@ namespace Account_Creator_Tool
 
                 try
                 {
-                    StringConn = @"Server=" + serverDat + ";Database=" + databaseDat + ";User Id=" + userDat + ";Password=" + passwordDat;
-                    StringConn2 = @"Server=" + serverDat + ";Database=" + databaseDat2 + ";User Id=" + userDat + ";Password=" + passwordDat;
-                    conn = new SqlConnection(StringConn);
-                    conn2 = new SqlConnection(StringConn2);
+                    stringConn = @"Server=" + serverDat + ";Database=" + databaseDat + ";User Id=" + userDat + ";Password=" + passwordDat;
+                    stringConn2 = @"Server=" + serverDat + ";Database=" + databaseDat2 + ";User Id=" + userDat + ";Password=" + passwordDat;
+                    conn = new SqlConnection(stringConn);
+                    conn2 = new SqlConnection(stringConn2);
                     //conn.Open();
-                    lblInfoDB.Text = "ON";
-                    lblInfoDB.ForeColor = Color.Green;
-                    btnDisconnect.Enabled = true;
-                    btnConnect.Enabled = false;
-                    txtIPDB.Enabled = false;
-                    txtAccountName.Enabled = false;
-                    txtUserDB.Enabled = false;
-                    txtPasswordDB.Enabled = false;
+
+                    if(isServerConnected(stringConn) && isServerConnected(stringConn2)){
+                        lblInfoDB.Text = "ON";
+                        lblInfoDB.ForeColor = Color.Green;
+                        btnDisconnect.Enabled = true;
+                        btnConnect.Enabled = false;
+                        txtIPDB.Enabled = false;
+                        txtAccountName.Enabled = false;
+                        txtUserDB.Enabled = false;
+                        txtPasswordDB.Enabled = false;
+                    }
+                    
                 }
                 catch (SqlException ex)
                 {
@@ -105,24 +126,28 @@ namespace Account_Creator_Tool
             string nameUser = txtUser.Text;
             string passUser = txtUserPassword.Text;
 
+
             try
             {
                 if(chBGM.Checked == true)
                 {
-
-                    conn.Open();
-                    string sqlQuery = "INSERT INTO account_login (name, password) VALUES (@Name, @Password)";
-                    mySqlCommand = new SqlCommand(sqlQuery, conn);
-                    mySqlCommand.Parameters.AddWithValue("Name", nameUser);
-                    mySqlCommand.Parameters.AddWithValue("Password", MD5Hash(passUser).ToUpper());
-                    mySqlCommand.ExecuteNonQuery();
-                    conn.Close();
-                    string sqlQuery2 = "INSERT INTO account (act_id, gm, act_name) VALUES ((SELECT MAX(act_id) + 1 FROM account), 99, @Act_name)";
-                    conn2.Open();
-                    mySqlCommand = new SqlCommand(sqlQuery2, conn2);
-                    mySqlCommand.Parameters.AddWithValue("Act_name", nameUser);
-                    mySqlCommand.ExecuteNonQuery();
-                    conn2.Close();
+                    if (isServerConnected(stringConn) && isServerConnected(stringConn2))
+                    {
+                        conn.Open();
+                        string sqlQuery = "INSERT INTO account_login (name, password) VALUES (@Name, @Password)";
+                        mySqlCommand = new SqlCommand(sqlQuery, conn);
+                        mySqlCommand.Parameters.AddWithValue("Name", nameUser);
+                        mySqlCommand.Parameters.AddWithValue("Password", MD5Hash(passUser).ToUpper());
+                        mySqlCommand.ExecuteNonQuery();
+                        conn.Close();
+                        string sqlQuery2 = "INSERT INTO account (act_id, gm, act_name) VALUES ((SELECT MAX(act_id) + 1 FROM account), 99, @Act_name)";
+                        conn2.Open();
+                        mySqlCommand = new SqlCommand(sqlQuery2, conn2);
+                        mySqlCommand.Parameters.AddWithValue("Act_name", nameUser);
+                        mySqlCommand.ExecuteNonQuery();
+                        conn2.Close();
+                    }
+                    
                 }
                 else
                 {

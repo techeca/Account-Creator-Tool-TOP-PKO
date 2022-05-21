@@ -33,7 +33,6 @@ namespace Account_Creator_Tool
             this.txtGameName = new System.Windows.Forms.TextBox();
             this.txtAccountName = new System.Windows.Forms.TextBox();
             this.btnDisconnect = new System.Windows.Forms.Button();
-            this.lblInfoDB = new System.Windows.Forms.Label();
             this.txtIPDB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPasswordDB = new System.Windows.Forms.TextBox();
@@ -49,6 +48,7 @@ namespace Account_Creator_Tool
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtUser = new System.Windows.Forms.TextBox();
+            this.lblInfoDB = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -75,7 +75,7 @@ namespace Account_Creator_Tool
             // 
             // txtGameName
             // 
-            this.txtGameName.Location = new System.Drawing.Point(194, 61);
+            this.txtGameName.Location = new System.Drawing.Point(194, 57);
             this.txtGameName.Name = "txtGameName";
             this.txtGameName.Size = new System.Drawing.Size(91, 23);
             this.txtGameName.TabIndex = 10;
@@ -84,7 +84,7 @@ namespace Account_Creator_Tool
             // 
             // txtAccountName
             // 
-            this.txtAccountName.Location = new System.Drawing.Point(195, 32);
+            this.txtAccountName.Location = new System.Drawing.Point(195, 28);
             this.txtAccountName.Name = "txtAccountName";
             this.txtAccountName.Size = new System.Drawing.Size(90, 23);
             this.txtAccountName.TabIndex = 9;
@@ -93,7 +93,7 @@ namespace Account_Creator_Tool
             // 
             // btnDisconnect
             // 
-            this.btnDisconnect.Location = new System.Drawing.Point(159, 122);
+            this.btnDisconnect.Location = new System.Drawing.Point(194, 125);
             this.btnDisconnect.Name = "btnDisconnect";
             this.btnDisconnect.Size = new System.Drawing.Size(75, 23);
             this.btnDisconnect.TabIndex = 8;
@@ -101,18 +101,9 @@ namespace Account_Creator_Tool
             this.btnDisconnect.UseVisualStyleBackColor = true;
             this.btnDisconnect.Click += new System.EventHandler(this.btnDisconnect_Click);
             // 
-            // lblInfoDB
-            // 
-            this.lblInfoDB.AutoSize = true;
-            this.lblInfoDB.Location = new System.Drawing.Point(27, 126);
-            this.lblInfoDB.Name = "lblInfoDB";
-            this.lblInfoDB.Size = new System.Drawing.Size(34, 15);
-            this.lblInfoDB.TabIndex = 7;
-            this.lblInfoDB.Text = "INFO";
-            // 
             // txtIPDB
             // 
-            this.txtIPDB.Location = new System.Drawing.Point(88, 32);
+            this.txtIPDB.Location = new System.Drawing.Point(88, 28);
             this.txtIPDB.Name = "txtIPDB";
             this.txtIPDB.Size = new System.Drawing.Size(101, 23);
             this.txtIPDB.TabIndex = 6;
@@ -121,7 +112,7 @@ namespace Account_Creator_Tool
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 39);
+            this.label3.Location = new System.Drawing.Point(15, 35);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 15);
             this.label3.TabIndex = 5;
@@ -129,7 +120,7 @@ namespace Account_Creator_Tool
             // 
             // txtPasswordDB
             // 
-            this.txtPasswordDB.Location = new System.Drawing.Point(88, 90);
+            this.txtPasswordDB.Location = new System.Drawing.Point(88, 86);
             this.txtPasswordDB.Name = "txtPasswordDB";
             this.txtPasswordDB.Size = new System.Drawing.Size(100, 23);
             this.txtPasswordDB.TabIndex = 4;
@@ -137,7 +128,7 @@ namespace Account_Creator_Tool
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 98);
+            this.label2.Location = new System.Drawing.Point(15, 94);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 15);
             this.label2.TabIndex = 3;
@@ -145,7 +136,7 @@ namespace Account_Creator_Tool
             // 
             // txtUserDB
             // 
-            this.txtUserDB.Location = new System.Drawing.Point(88, 61);
+            this.txtUserDB.Location = new System.Drawing.Point(88, 57);
             this.txtUserDB.Name = "txtUserDB";
             this.txtUserDB.Size = new System.Drawing.Size(100, 23);
             this.txtUserDB.TabIndex = 2;
@@ -153,7 +144,7 @@ namespace Account_Creator_Tool
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 68);
+            this.label1.Location = new System.Drawing.Point(15, 64);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 15);
             this.label1.TabIndex = 1;
@@ -161,7 +152,7 @@ namespace Account_Creator_Tool
             // 
             // btnConnect
             // 
-            this.btnConnect.Location = new System.Drawing.Point(78, 122);
+            this.btnConnect.Location = new System.Drawing.Point(113, 125);
             this.btnConnect.Name = "btnConnect";
             this.btnConnect.Size = new System.Drawing.Size(75, 23);
             this.btnConnect.TabIndex = 0;
@@ -180,14 +171,14 @@ namespace Account_Creator_Tool
             this.groupBox2.Controls.Add(this.txtUser);
             this.groupBox2.Location = new System.Drawing.Point(321, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(221, 159);
+            this.groupBox2.Size = new System.Drawing.Size(230, 159);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "New Account";
             // 
             // chBGM
             // 
-            this.chBGM.Location = new System.Drawing.Point(21, 92);
+            this.chBGM.Location = new System.Drawing.Point(31, 88);
             this.chBGM.Name = "chBGM";
             this.chBGM.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.chBGM.Size = new System.Drawing.Size(126, 19);
@@ -199,7 +190,7 @@ namespace Account_Creator_Tool
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(21, 125);
+            this.label7.Location = new System.Drawing.Point(31, 121);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(34, 15);
             this.label7.TabIndex = 5;
@@ -207,7 +198,7 @@ namespace Account_Creator_Tool
             // 
             // btnInsertUser
             // 
-            this.btnInsertUser.Location = new System.Drawing.Point(115, 121);
+            this.btnInsertUser.Location = new System.Drawing.Point(125, 117);
             this.btnInsertUser.Name = "btnInsertUser";
             this.btnInsertUser.Size = new System.Drawing.Size(75, 23);
             this.btnInsertUser.TabIndex = 4;
@@ -217,7 +208,7 @@ namespace Account_Creator_Tool
             // 
             // txtUserPassword
             // 
-            this.txtUserPassword.Location = new System.Drawing.Point(90, 60);
+            this.txtUserPassword.Location = new System.Drawing.Point(100, 56);
             this.txtUserPassword.Name = "txtUserPassword";
             this.txtUserPassword.Size = new System.Drawing.Size(100, 23);
             this.txtUserPassword.TabIndex = 3;
@@ -225,7 +216,7 @@ namespace Account_Creator_Tool
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(21, 63);
+            this.label5.Location = new System.Drawing.Point(31, 59);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 15);
             this.label5.TabIndex = 2;
@@ -234,7 +225,7 @@ namespace Account_Creator_Tool
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 38);
+            this.label4.Location = new System.Drawing.Point(31, 34);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(30, 15);
             this.label4.TabIndex = 1;
@@ -242,10 +233,19 @@ namespace Account_Creator_Tool
             // 
             // txtUser
             // 
-            this.txtUser.Location = new System.Drawing.Point(90, 31);
+            this.txtUser.Location = new System.Drawing.Point(100, 27);
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(100, 23);
             this.txtUser.TabIndex = 0;
+            // 
+            // lblInfoDB
+            // 
+            this.lblInfoDB.AutoSize = true;
+            this.lblInfoDB.Location = new System.Drawing.Point(29, 129);
+            this.lblInfoDB.Name = "lblInfoDB";
+            this.lblInfoDB.Size = new System.Drawing.Size(34, 15);
+            this.lblInfoDB.TabIndex = 7;
+            this.lblInfoDB.Text = "INFO";
             // 
             // accountCreator
             // 
@@ -268,7 +268,6 @@ namespace Account_Creator_Tool
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label lblInfoDB;
         private System.Windows.Forms.TextBox txtIPDB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPasswordDB;
@@ -287,6 +286,7 @@ namespace Account_Creator_Tool
         private System.Windows.Forms.TextBox txtAccountName;
         private System.Windows.Forms.CheckBox chBGM;
         private System.Windows.Forms.TextBox txtGameName;
+        private System.Windows.Forms.Label lblInfoDB;
     }
 }
 
